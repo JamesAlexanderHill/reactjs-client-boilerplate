@@ -24,7 +24,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+		"eslint-plugin-storybook"
     ],
     "rules": {
     }
