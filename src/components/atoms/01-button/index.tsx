@@ -18,7 +18,7 @@ type A01ButtonProps = {
 type Ref = HTMLButtonElement;
 
 const tailwindStyleMap = {
-	base: 'inline-flex items-center justify-center rounded border border-gray-300 bg-white text-gray-700 px-4 py-2 text-sm font-medium shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500',
+	base: 'inline-flex items-center justify-center rounded border border-gray-300 bg-white text-gray-700 px-4 py-2 text-sm font-medium shadow-sm hover:bg-gray-50 dark:ring-offset-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500',
 	primary: 'border-transparent bg-indigo-600 text-white shadow-sm hover:bg-indigo-700',
 	secondary: 'border-transparent bg-indigo-100 text-indigo-700 shadow-none hover:bg-indigo-200',
 };
@@ -40,8 +40,8 @@ const A01Button = forwardRef<Ref, A01ButtonProps>(({
 			'A01Button',
 			{
 				base: true,
-				primary: isPrimary,
-				secondary: isSecondary,
+				primary: isPrimary, // Primary should take precidence
+				secondary: !isPrimary && isSecondary,
 			},
 			className, // Any overrides eg. 'rounded-full' or 'w-full'
 		)}

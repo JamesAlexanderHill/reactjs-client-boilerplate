@@ -17,6 +17,10 @@ const Template = ({label, ...htmlAttributes}) => (
 export const Default = Template.bind({});
 Default.args = {
 	label: 'Button',
+	isPrimary: false,
+	isSecondary: false,
+	isDisabled: false,
+	className: '',
 };
 
 export const Primary = Template.bind({});
